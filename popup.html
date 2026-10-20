@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 280px; margin: 0; background: #121212; color: #cccccc; font-family: system-ui, sans-serif; padding: 16px; }
+  h2 { font-size: 14px; margin: 0 0 12px 0; color: #e0e0e0; }
+  #current-site { font-size: 12px; color: #8ab4f8; background: #1e1e1e; padding: 6px 8px; border-radius: 6px; word-break: break-all; margin-bottom: 12px; }
+  button { width: 100%; background: #2a2a2a; color: #e0e0e0; border: 1px solid #444; padding: 10px; border-radius: 8px; cursor: pointer; font-size: 13px; }
+  button:hover { background: #333; }
+  button#toggle-site { background: #8ab4f8; color: #121212; border: none; font-weight: 600; }
+  .footer { margin-top: 12px; text-align: center; }
+  .footer a { color: #888; font-size: 11px; text-decoration: none; }
+  .footer a:hover { color: #ccc; }
+</style>
+</head>
+<body>
+  <h2>Dark Shield</h2>
+  <div id="current-site">loading...</div>
+  <button id="toggle-site">Toggle Dark for this site</button>
+  <div class="footer"><a href="options.html" target="_blank">Manage lists</a></div>
+  <script src="popup.js"></script>
+</body>
+</html>

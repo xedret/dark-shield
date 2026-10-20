@@ -1,0 +1,37 @@
+/* === GLOBAL DARK BASE === */
+html, body {
+  background-color: #121212 !important;
+}
+
+/* Default: force text to #ccc max as you asked */
+p, span, div, li, td, th, label, h1, h2, h3, h4 {
+  color: #cccccc !important;
+  -webkit-text-fill-color: #cccccc !important;
+}
+
+a, a span { color: #8ab4f8 !important; -webkit-text-fill-color: #8ab4f8 !important; }
+
+/* === SITE EXCEPTION: Amazon — must stay DARK backgrounds === */
+body[data-extension-dark="amazon"] #s-search-results,
+body[data-extension-dark="amazon"] .s-result-item,
+body[data-extension-dark="amazon"] .sg-col-inner,
+body[data-extension-dark="amazon"] #a-page,
+body[data-extension-dark="amazon"] .s-desktop-width-max {
+  background-color: #181818 !important;
+  background: #181818 !important;
+}
+
+body[data-extension-dark="amazon"] .s-result-item .a-size-base,
+body[data-extension-dark="amazon"] .s-result-item .a-color-base {
+  color: #e0e0e0 !important;
+  -webkit-text-fill-color: #e0e0e0 !important;
+}
+
+/* === SITE EXCEPTION: SuperUser / StackExchange — force #ccc === */
+body[data-extension-dark="stack"] .post-text,
+body[data-extension-dark="stack"] .s-prose,
+body[data-extension-dark="stack"] .comment-body {
+  background-color: #121212 !important;
+  color: #cccccc !important;
+  -webkit-text-fill-color: #cccccc !important;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dark Shield - Exception Manager</title>
+<style>
+  body { background: #121212; color: #e0e0e0; font-family: system-ui, sans-serif; margin: 0; padding: 40px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 20px; }
+  select { background: #222; color: #e0e0e0; border: 1px solid #333; padding: 6px 10px; border-radius: 6px; }
+  .lists { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-top: 20px; }
+  .list-col { display: flex; flex-direction: column; }
+  .list-col h3 { margin: 0 0 8px 0; font-size: 15px; }
+  .list-col h3 span { background: #333; color: #ccc; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-left: 6px; }
+  .desc { min-height: 36px; font-size: 13px; color: #999; margin: 0 0 10px 0; } /* <- fixes alignment */
+  textarea { width: 100%; height: 200px; background: #1e1e1e; color: #ccc; border: 1px solid #333; border-radius: 8px; padding: 10px; font-family: monospace; font-size: 13px; resize: vertical; box-sizing: border-box; }
+  textarea:focus { outline: none; border-color: #8ab4f8; }
+  .actions { margin-top: 24px; display: flex; gap: 10px; }
+  button { background: #2a2a2a; color: #e0e0e0; border: 1px solid #444; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+  button#save { background: #8ab4f8; color: #121212; border: none; font-weight: bold; }
+  .privacy { margin-top: 30px; background: #1a1a1a; padding: 12px; border-radius: 8px; font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Dark Shield - Exception Manager</h1>
+  <label>Mode: 
+    <select id="mode">
+      <option value="blacklist">Blacklist - Dark everywhere EXCEPT listed</option>
+      <option value="whitelist">Whitelist - Dark only on listed</option>
+    </select>
+  </label>
+
+  <div class="lists">
+    <div class="list-col">
+      <h3>Blacklist <span id="blacklist-count">0</span></h3>
+      <p class="desc">Sites where dark mode is DISABLED. One domain per line.</p>
+      <textarea id="blacklist" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="web.whatsapp.com"></textarea>
+    </div>
+    <div class="list-col">
+      <h3>Whitelist <span id="whitelist-count">0</span></h3>
+      <p class="desc">Sites where dark mode is ENABLED (only used in whitelist mode).</p>
+      <textarea id="whitelist" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="wikipedia.org&#10;news.ycombinator.com"></textarea>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button id="save">Save</button>
+    <button id="export">Export JSON</button>
+    <button id="import">Import JSON</button>
+  </div>
+
+  <div class="privacy"><b>Privacy:</b> This extension does not collect, transmit, track, or sell any data. All lists are stored locally in chrome.storage.local on your device only. No network requests are made.</div>
+</div>
+<script src="options.js"></script>
+</body>
+</html>
